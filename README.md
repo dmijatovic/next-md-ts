@@ -1,3 +1,21 @@
+# Next Masterial Design (raw) and typescript demo
+
+This project is test of typescript and material design (plain javascript implementation)
+
+## Installation
+
+```bash
+# scaffold nextjs app
+npx create-next-app
+# install typescript basics
+npm i -D typescript @types/react @types/node
+# look for types on github definetly typed
+```
+
+After installing typescript rename indexjs to tsx file and run nextjs. NextJS will then create default tsconfig.json file and next-env.d.ts file. When using css modules or scss you need to add typing into next-env.d.ts with basic declaration (see next-env.d.ts)
+
+## Default readme nextjs
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
