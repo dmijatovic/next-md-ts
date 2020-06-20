@@ -4,17 +4,30 @@ header{
   background-color: var(--accent-color,#fff);
 }
 
-
-
 .header-menu-item{
-  padding: 1rem;
-  color: blue;
+  padding: 1rem 0.75rem 1rem 0rem;
+  color:var(--secudary-color, #a34a);
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: none;
 }
 
 .header-menu-item.active{
-  color: red;
+  color:var(--primary-color,#a6a6a6);
 }
 
 .page-main-body{
   padding: 1rem;
+}
+
+h1, h2 {
+  padding: 0 0 1rem 0;
+}
+
+h3{
+  padding: 0 0 0.5rem 0;
+}
+
+h1,h2,h3,h4{
+  font-weight:500;
 }

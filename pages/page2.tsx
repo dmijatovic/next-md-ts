@@ -11,8 +11,9 @@ export default ()=>{
       </Head>
       <PageLayout>
         <PageTitle title="Provided title for page 2"/>
-        <PageSection title="This section title">
+        <PageSection title="This is section title provided as prop">
           <p>This is text paragraph</p>
+          <div>Then I used this div as another child</div>
         </PageSection>
       </PageLayout>
     </>

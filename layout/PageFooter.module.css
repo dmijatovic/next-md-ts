@@ -3,5 +3,8 @@
   display:flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: blueviolet;
+  color: var(--lightgrey,#ccc);
+  background-color: var(--darkgrey,#333);
+  font-weight: 300;
+  font-size: .75rem;
 }
