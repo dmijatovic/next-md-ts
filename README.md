@@ -14,6 +14,34 @@ npm i -D typescript @types/react @types/node
 
 After installing typescript rename indexjs to tsx file and run nextjs. NextJS will then create default tsconfig.json file and next-env.d.ts file. When using css modules or scss you need to add typing into next-env.d.ts with basic declaration (see next-env.d.ts)
 
+## Typescript specifics
+
+- When using typescript the page components should use NextPage type.
+- However, the children components should better use React.FC component type.
+- When defining FC you can directly create interface using {} like this and in the () specify default value
+
+```javascript
+const PageTitle:React.FC<{title:string}>=({title="Default title"})=>{
+  return (
+    <h2>{title}</h2>
+  )
+}
+```
+
+- for children use ReactNode generic type like this
+
+```javascript
+export interface iPageLayout {
+  header?: iHeaderData,
+  footer?: iFooterData,
+  children?: React.ReactNode
+}
+```
+
+## Next specifics
+
+- getInitalProps can be only called from top of the page, not from children components.
+
 ## Default readme nextjs
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

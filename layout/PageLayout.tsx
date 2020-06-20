@@ -1,8 +1,7 @@
 import PageHeader, {iHeaderData, eMenuType} from "./PageHeader"
 import PageFooter, {iFooterData} from "./PageFooter"
-import { JSXElementConstructor } from "react"
-import { NextPage } from "next"
 
+import { pageLayoutData } from 'store/pageConfig'
 
 declare global {
   namespace JSX {
@@ -13,25 +12,27 @@ declare global {
 }
 
 export interface iPageLayout {
-  header: iHeaderData,
-  footer: iFooterData,
-  children?: JSXElementConstructor<React.Component>[] | undefined
+  header?: iHeaderData,
+  footer?: iFooterData,
+  children?: React.ReactNode
 }
 
-const PageLayout:NextPage = (props:iPageLayout) =>{
-  // console.log("PageLayout...props...", props)
+const PageLayout:React.FC<iPageLayout|undefined> = ({
+  header=pageLayoutData.header,
+  children,
+  footer=pageLayoutData.footer}) =>{
+  // console.log("PageLayout...header...", header)
   return (
     <>
-      <PageHeader {...props.header}/>
-      <main>
+      <PageHeader {...header}/>
+      <main className="page-main-body">
         {
-          props.children ? props.children :
+          children ? children :
           <dv4-loader-square-jelly>Loading...</dv4-loader-square-jelly>
         }
       </main>
-      <PageFooter {...props.footer} />
+      <PageFooter {...footer} />
     </>
-
   )
 }
 

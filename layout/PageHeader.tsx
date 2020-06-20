@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ReactElement } from 'react'
+import {useRouter} from 'next/router'
 
 export enum eMenuType{
   URL_LINK,
@@ -18,13 +18,19 @@ export interface iHeaderData{
 }
 
 function createNavItems(menu:iMenuItem[]){
+  if (!menu) return null
+  const router = useRouter()
   const innerHtml = menu.map(item => {
     if (item.type === eMenuType.ROUTE){
+      let classes="header-menu-item"
+      if (item.href === router.pathname){
+        classes += " active"
+      }
       return (
         <Link
           key={item.href}
           href={item.href}>
-          <a href="" className="header-menu-item">{item.label}</a>
+          <a href="" className={classes}>{item.label}</a>
         </Link>
       )
     }
@@ -32,8 +38,7 @@ function createNavItems(menu:iMenuItem[]){
   return innerHtml
 }
 
-const PageHeader = (props:iHeaderData) => {
-  const {title, menu} = props
+const PageHeader:React.FC<iHeaderData> = ({title="Default app title", menu=[]}) => {
   return(
     <header>
       <h1>{title}</h1>
