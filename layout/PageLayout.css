@@ -31,3 +31,8 @@ h3{
 h1,h2,h3,h4{
   font-weight:500;
 }
+
+p, div{
+  line-height: 1.5rem;
+  padding: 0 0 0.5rem 0;
+}

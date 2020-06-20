@@ -8,7 +8,8 @@ export const pageLayoutData:iPageLayout={
       {href:'/',label:'Home',type: eMenuType.ROUTE},
       {href:'/page1',label:'Link to page 1',type: eMenuType.ROUTE},
       {href:'/page2',label:'Link to page 2',type: eMenuType.ROUTE},
-      {href:'/page3',label:'Link to page 3',type: eMenuType.URL_LINK}
+      {href:'/page3',label:'Link to page 3',type: eMenuType.ROUTE},
+      {href:'/google',label:'Link to Google',type: eMenuType.URL_LINK}
     ]
   },
   footer:{
